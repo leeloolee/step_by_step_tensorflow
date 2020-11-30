@@ -37,7 +37,7 @@ def preprocess(file_path):
     label = get_label(file_path)
     img = tf.io.read_file(file_path)
     img = decode_img(img)
-    img = img/255.0
+    img = tf.cast(img, tf.float32)/255.0
     return img, label
 
 
